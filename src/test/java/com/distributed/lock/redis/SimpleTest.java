@@ -34,7 +34,7 @@ public class SimpleTest {
         template.execute("订单流水号", 5000, new Callback() {
             @Override
             public Object onGetLock() throws InterruptedException {
-                //TODO 获得锁后要做的事
+                System.out.println("//TODO 获得锁后要做的事");
                 return null;
             }
 
