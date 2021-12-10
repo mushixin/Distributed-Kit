@@ -9,20 +9,84 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
 import redis.clients.jedis.JedisPool;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.*;
 
 /**
  * Created by sunyujia@aliyun.com on 2016/2/24.
  */
 public class RedisReentrantLockTemplateTest {
 
+    private static CountDownLatch a = new CountDownLatch(1);
+    private static CountDownLatch b = new CountDownLatch(1);
+    private static CountDownLatch c = new CountDownLatch(1);
+    private static CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+
+
+    @Test
+    public void countDownLatchTest() throws BrokenBarrierException, InterruptedException {
+
+        //学习下countDownLatch  我记得这个可以用来阻塞线程，和唤醒线程。交替打印ABC
+        new Thread(){
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                        System.out.print("A");
+                        a = new CountDownLatch(1);
+                        b.countDown();
+                        a.await();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
+
+
+        new Thread(){
+            @Override
+            public void run() {
+                while (true){
+                    try {
+                        b.await();
+                        b = new CountDownLatch(1);
+                        System.out.print("B");
+                        c.countDown();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }.start();
+
+
+        new Thread(){
+            @Override
+            public void run() {
+                while (true){
+                    try {
+                        c.await();
+                        System.out.print("C");
+                        c = new CountDownLatch(1);
+                        a.countDown();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }.start();
+
+//        System.out.println("runbef");
+        cyclicBarrier.await();
+        System.out.println("runaft");
+    }
+
+
     @Test
     public void testTry() throws InterruptedException {
-        JedisPool jp=new JedisPool("127.0.0.1",6379);
-        final RedisDistributedLockTemplate template=new RedisDistributedLockTemplate(jp);
+        final JedisPool jp=new JedisPool("127.0.0.1",6379);
 
         int size=100;
         final CountDownLatch startCountDownLatch = new CountDownLatch(1);
@@ -35,7 +99,8 @@ public class RedisReentrantLockTemplateTest {
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }
-                    final int sleepTime=ThreadLocalRandom.current().nextInt(5)*1000;
+                    final int sleepTime=ThreadLocalRandom.current().nextInt(2)*1000;
+                    HHRedisDistributedLockTemplate template=new HHRedisDistributedLockTemplate(jp);
                     template.execute("test",5000, new Callback() {
                         public Object onGetLock() throws InterruptedException {
                             System.out.println(Thread.currentThread().getName() + ":getLock");
