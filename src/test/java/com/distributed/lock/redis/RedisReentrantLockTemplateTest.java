@@ -7,6 +7,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import java.util.concurrent.*;
@@ -86,7 +87,14 @@ public class RedisReentrantLockTemplateTest {
 
     @Test
     public void testTry() throws InterruptedException {
+        System.setProperty("sun.net.client.defaultConnectTimeout", String
+                .valueOf(100_000));// （单位：毫秒）
+        System.setProperty("sun.net.client.defaultReadTimeout", String
+                .valueOf(100_000)); // （单位：毫秒）
+
+
         final JedisPool jp=new JedisPool("127.0.0.1",6379);
+        final Jedis jd = jp.getResource();
 
         int size=100;
         final CountDownLatch startCountDownLatch = new CountDownLatch(1);
@@ -100,7 +108,7 @@ public class RedisReentrantLockTemplateTest {
                         Thread.currentThread().interrupt();
                     }
                     final int sleepTime=ThreadLocalRandom.current().nextInt(2)*1000;
-                    HHRedisDistributedLockTemplate template=new HHRedisDistributedLockTemplate(jp);
+                    HHRedisDistributedLockTemplate template=new HHRedisDistributedLockTemplate(jd);
                     template.execute("test",5000, new Callback() {
                         public Object onGetLock() throws InterruptedException {
                             System.out.println(Thread.currentThread().getName() + ":getLock");

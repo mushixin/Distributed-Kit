@@ -1,0 +1,200 @@
+2021-12-10 23:13:31.421 [Thread-9] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-10] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-3] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-7] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-6] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-1] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-2] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-5] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-8] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted
+2021-12-10 23:13:31.421 [Thread-4] ERROR [com.distributed.lock.redis.HHRedisDistributedLockTemplate] - java.net.SocketTimeoutException: Read timed out
+redis.clients.jedis.exceptions.JedisConnectionException: java.net.SocketTimeoutException: Read timed out
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:201) ~[jedis-2.7.2.jar:na]
+	at redis.clients.util.RedisInputStream.readByte(RedisInputStream.java:40) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.process(Protocol.java:132) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Protocol.read(Protocol.java:196) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:288) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Connection.getIntegerReply(Connection.java:213) ~[jedis-2.7.2.jar:na]
+	at redis.clients.jedis.Jedis.setnx(Jedis.java:354) ~[jedis-2.7.2.jar:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.tryLock(HHRedisDistributedLockTemplate.java:31) ~[classes/:na]
+	at com.distributed.lock.redis.HHRedisDistributedLockTemplate.execute(HHRedisDistributedLockTemplate.java:56) ~[classes/:na]
+	at com.distributed.lock.redis.RedisReentrantLockTemplateTest$4.run(RedisReentrantLockTemplateTest.java:104) [test-classes/:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[na:1.8.0_301]
+	at java.net.SocketInputStream.read(SocketInputStream.java:127) ~[na:1.8.0_301]
+	at redis.clients.util.RedisInputStream.ensureFill(RedisInputStream.java:195) ~[jedis-2.7.2.jar:na]
+	... 9 common frames omitted

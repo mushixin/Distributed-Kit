@@ -17,12 +17,12 @@ import java.util.concurrent.TimeUnit;
 public class HHRedisDistributedLockTemplate implements DistributedLockTemplate {
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(HHRedisDistributedLockTemplate.class);
 
-    private JedisPool jedisPool;
+//    private JedisPool jedisPool;
     private Jedis jedis ;
 
-    public HHRedisDistributedLockTemplate(JedisPool jedisPool) {
-        this.jedisPool = jedisPool;
-        this.jedis = jedisPool.getResource();
+    public HHRedisDistributedLockTemplate(Jedis jedis) {
+//        this.jedisPool = jedisPool;
+        this.jedis = jedis;
     }
 
 
@@ -40,11 +40,11 @@ public class HHRedisDistributedLockTemplate implements DistributedLockTemplate {
             jedis.del(key);
             System.out.println("unLock key:"+key+"val:"+value);
         }else{
-            jedis.close();
+//            jedis.close();
             System.out.println("unlockERROR:"+"key:"+key+"expectVal:"+value+"val:"+jedis.get(key));
             return false;
         }
-        jedis.close();
+//        jedis.close();
         return true;
     }
 
@@ -68,7 +68,7 @@ public class HHRedisDistributedLockTemplate implements DistributedLockTemplate {
             if(getLock) {
                 unLock(lockId,ran);
             }else{
-                jedis.close();
+//                jedis.close();
             }
         }
         return null;
